@@ -1,0 +1,33 @@
+{
+  "name": "gridsafe-monitoring",
+  "version": "1.0.0",
+  "description": "IoT-based Low Voltage AC Distribution Over Head conductor monitoring system for KSEBL",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "backend:dev": "cd fullstack/backend && npm run dev",
+    "frontend:dev": "cd fullstack/frontend/app && npm run dev",
+    "backend:build": "cd fullstack/backend && npm run build",
+    "frontend:build": "cd fullstack/frontend/app && npm run build",
+    "backend:start": "cd fullstack/backend && npm start",
+    "frontend:start": "cd fullstack/frontend/app && npm run preview",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd fullstack/backend && npm install && npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed",
+    "setup:frontend": "cd fullstack/frontend/app && npm install",
+    "db:reset": "cd fullstack/backend && npm run prisma:migrate:reset && npm run prisma:seed",
+    "db:seed": "cd fullstack/backend && npm run prisma:seed"
+  },
+  "keywords": [
+    "iot",
+    "power-distribution",
+    "ksebl",
+    "monitoring",
+    "react",
+    "nodejs",
+    "prisma"
+  ],
+  "author": "KSEBL Development Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
